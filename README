@@ -1,8 +1,8 @@
-# Infraestrutura como código utilizando Terraform - Ansible - Docker - Zabbix - AWS 🚨
+# Infraestrutura como código utilizando Terraform - Ansible - Docker - Zabbix - AWS 
 
 #### Este projeto visa facilitar a criação do ambiente de monitoramento Zabbix na AWS utilizando o EC2.
 
-### ✅ Pré-requisitos:
+###  Pré-requisitos:
 
 - [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli);
 - [Configuração do AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html);
@@ -29,13 +29,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ---
 
-#### 🧑‍🍳 Preparando ambiente:
+####  Preparando ambiente:
 
 Lembre-se de alterar os campos em env/Prod/main.tf. Neste arquivo, encontra-se o `ID da imagem AWS` (A ID da imagem muda de acordo com a região), a `região` que será construído a infraestrutura, o nome da `chave` ssh, o tipo da `instância` e o `nome da aplicação`.
 
 ---
 
-#### 🚀 Rodando o projeto
+####  Rodando o projeto
 
 ```bash
 # Inicilizando terraform na pasta `infra` e env/Prod
@@ -54,7 +54,7 @@ $ terraform apply
 
 ---
 
-### ⚠️ ATENÇÃO!
+###  ATENÇÃO!
 
 > É necessário fazer os passos do pré-requisito listado acima, principalmente o AWS CLI.
 
