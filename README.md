@@ -2,7 +2,7 @@
 
 #### Este projeto visa facilitar a criação do ambiente de monitoramento Zabbix na AWS utilizando o EC2.
 
-### Pré-requisitos:
+### :pushpin: Pré-requisitos:
 
 - [Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli);
 - [Configuração do AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html);
@@ -10,7 +10,7 @@
 
 ---
 
-### Tecnologias
+### :telescope: Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
@@ -29,13 +29,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ---
 
-#### Preparando ambiente:
+#### :unlock: Preparando ambiente:
 
 Lembre-se de alterar os campos em env/Prod/main.tf. Neste arquivo, encontra-se o `ID da imagem AWS` (A ID da imagem muda de acordo com a região), a `região` que será construído a infraestrutura, o nome da `chave` ssh, o tipo da `instância` e o `nome da aplicação`.
 
 ---
 
-#### Rodando o projeto
+#### :rocket: Rodando o projeto
 
 ```bash
 # Inicilizando terraform na pasta `infra` e env/Prod
@@ -54,7 +54,7 @@ $ terraform apply
 
 ---
 
-### ATENÇÃO!
+### :warning: ATENÇÃO!
 
 > É necessário fazer os passos do pré-requisito listado acima, principalmente o AWS CLI.
 
