@@ -1,0 +1,36 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Install Docker
+      ansible.builtin.apt:
+        pkg:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-buildx-plugin
+          - docker-compose-plugin
+        update_cache: yes
+      become: true
+    - name: Create a directory if it does not exist
+      ansible.builtin.file:
+        path: /home/ubuntu/app
+        state: directory
+    - name: Baixando os arquivos do projeto
+      ansible.builtin.git:
+        repo: https://github.com/IIgorAugustoI/zabbix-docker.git
+        dest: /home/ubuntu/app
+        version: main
+        force: true
+    - name: Adicionando arquivos de senhas
+      ansible.builtin.shell: |
+        echo "zabbix" > /home/ubuntu/app/keys/name_db.txt
+        echo "zabbix" > /home/ubuntu/app/keys/passwd_db.txt
+        echo "zabbix" > /home/ubuntu/app/keys/user_db.txt
+        echo "zabbix" > /home/ubuntu/app/keys/user_gf.txt
+        echo "zabbix" > /home/ubuntu/app/keys/passwd_gf.txt
+      become: true
+    - name: execute docker
+      ansible.builtin.shell: |
+        cd /home/ubuntu/app
+        docker compose up -d
+      become: true
